@@ -8,12 +8,14 @@ interface IAuthContext {
 	signIn: () => void;
 	signOut: () => void;
 	user: User;
+	isAuth: boolean;
 }
 
 const AuthContext = React.createContext<IAuthContext>({
 	signIn() {},
 	signOut() {},
-	user: {}
+	user: {},
+	isAuth: false
 });
 
 export function useAuth() {
@@ -69,7 +71,8 @@ export function Provider(props: any) {
 					setAuth(undefined);
 					removeItem();
 				},
-				user
+				user,
+				isAuth: !user
 			}}>
 			{props.children}
 		</AuthContext.Provider>
