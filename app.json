@@ -1,7 +1,7 @@
 {
 	"expo": {
-		"name": "sort4u",
-		"slug": "sort4u",
+		"name": "sort4u-app",
+		"slug": "sort4u-app",
 		"version": "0.0.1",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
@@ -29,6 +29,12 @@
 		"web": {
 			"bundler": "metro",
 			"favicon": "./assets/favicon.png"
-		}
+		},
+		"extra": {
+			"eas": {
+				"projectId": "69845c99-5a0d-4c19-884c-25ef5f9e2497"
+			}
+		},
+		"owner": "dinels"
 	}
 }
