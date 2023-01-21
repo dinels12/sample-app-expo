@@ -28,10 +28,11 @@ function useProtetedRoute(user: User) {
 
 	React.useEffect(() => {
 		if (user === undefined) {
+			router.replace('/sign-in');
 			return;
 		}
 		if (!rootSegment) {
-			router.replace('/home');
+			router.replace('/sign-in');
 			return;
 		}
 

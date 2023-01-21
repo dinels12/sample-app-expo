@@ -41,7 +41,7 @@
 		},
 		"owner": "dinels",
 		"runtimeVersion": {
-			"policy": "appVersion"
+			"policy": "sdkVersion"
 		}
 	}
 }
