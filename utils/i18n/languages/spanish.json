@@ -1,0 +1,4 @@
+{
+	"orderSuccess": "La orden {{orderId}} fue completada con exito!",
+	"hello": "Hola {{name}}!"
+}

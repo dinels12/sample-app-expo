@@ -1,47 +1,52 @@
 {
-	"expo": {
-		"name": "sort4u-app",
-		"slug": "sort4u-app",
-		"version": "0.0.1",
-		"orientation": "portrait",
-		"icon": "./assets/icon.png",
-		"userInterfaceStyle": "light",
-		"scheme": "sort4u",
-		"splash": {
-			"image": "./assets/splash.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0,
-			"url": "https://u.expo.dev/69845c99-5a0d-4c19-884c-25ef5f9e2497",
-			"checkAutomatically": "ON_LOAD",
-			"enabled": true
-		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true,
-			"bundleIdentifier": "com.dinels.sort4uapp"
-		},
-		"android": {
-			"versionCode": 1,
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
-			}
-		},
-		"web": {
-			"bundler": "metro",
-			"favicon": "./assets/favicon.png"
-		},
-		"extra": {
-			"eas": {
-				"projectId": "69845c99-5a0d-4c19-884c-25ef5f9e2497"
-			}
-		},
-		"owner": "dinels",
-		"runtimeVersion": {
-			"policy": "sdkVersion"
-		}
-	}
+  "expo": {
+    "name": "sort4u-app",
+    "slug": "sort4u-app",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "sort4u",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/69845c99-5a0d-4c19-884c-25ef5f9e2497",
+      "checkAutomatically": "ON_LOAD",
+      "enabled": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.dinels.sort4uapp"
+    },
+    "android": {
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "69845c99-5a0d-4c19-884c-25ef5f9e2497"
+      }
+    },
+    "owner": "dinels",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "plugins": [
+      "expo-tracking-transparency"
+    ]
+  }
 }

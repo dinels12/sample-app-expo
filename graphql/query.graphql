@@ -1,0 +1,12 @@
+query AllFilms {
+	allFilms {
+		films {
+			...FilmFragm
+			speciesConnection {
+				species {
+					...SpeciesFragm
+				}
+			}
+		}
+	}
+}

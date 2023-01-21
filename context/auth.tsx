@@ -19,7 +19,12 @@ const AuthContext = React.createContext<IAuthContext>({
 });
 
 export function useAuth() {
-	return React.useContext(AuthContext);
+	const context = React.useContext(AuthContext);
+
+	if (context === undefined) {
+		throw new Error('useAuth must be used within a AuthProvider');
+	}
+	return context;
 }
 
 function useProtetedRoute(user: User) {
@@ -44,7 +49,7 @@ function useProtetedRoute(user: User) {
 	}, [user, rootSegment]);
 }
 
-export function Provider(props: any) {
+export function AuthProvider(props: any) {
 	const { getItem, setItem, removeItem } = useAsyncStorage('USER');
 	const [user, setAuth] = React.useState<undefined | {}>(undefined);
 
