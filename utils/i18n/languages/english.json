@@ -1,4 +1,12 @@
 {
 	"orderSuccess": "The Order {{orderId}} was completed succesfully",
-	"hello": "Hello {{name}}!"
+	"welcome": "Welcome!",
+	"hello": "Hello {{name}}!",
+	"signIn": "Sign In",
+	"signUp": "Sign Up",
+	"signOut": "Sign Out",
+	"tabHome": "Home",
+	"tabSearch": "Search",
+	"tabProfile": "Profile",
+	"tabSettings": "Settings"
 }

@@ -1,13 +1,14 @@
 import { Stack } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { useTranslation } from '../../../utils/i18n';
+import { useAuth } from '../../../context/auth';
 
 export default function App() {
 	const { updateLocale, t } = useTranslation();
+	const { signOut } = useAuth();
 
 	return (
 		<View style={styles.container}>
-			<Stack.Screen options={{ title: 'Inicio' }} />
 			<Text>
 				{t('hello', {
 					name: 'Daniel'
@@ -19,6 +20,10 @@ export default function App() {
 			</Pressable>
 			<Pressable onPress={() => updateLocale('es')}>
 				<Text>Español</Text>
+			</Pressable>
+
+			<Pressable onPress={() => signOut()}>
+				<Text>{t('signOut')}</Text>
 			</Pressable>
 		</View>
 	);

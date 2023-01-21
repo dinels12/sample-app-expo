@@ -3,6 +3,8 @@ import { I18n } from 'i18n-js';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import translationES from './languages/spanish.json';
 import translationEN from './languages/english.json';
+import { LangKeys } from './languages/keys';
+type LangKeysTypeof = keyof typeof LangKeys;
 
 export const i18n = new I18n({
 	en: translationEN,
@@ -13,7 +15,7 @@ type Lang = 'es' | 'en';
 
 const missingTranslationRegex = /^\[missing ".*" translation\]$/;
 // This function is a wrapper to avoid exception wich leads in a crash
-const translateOrFallback = (initialMsg: string, options?: object) => {
+const translateOrFallback = (initialMsg: LangKeysTypeof, options?: object) => {
 	// We tried to translate something else than a string
 	// The native I18n function will simply crash instead of rejecting the attempt with an error message
 	if (typeof initialMsg !== 'string') {
@@ -32,7 +34,7 @@ const translateOrFallback = (initialMsg: string, options?: object) => {
 
 interface ITranslationContext {
 	lang: string;
-	t: (text: string, options?: object) => string;
+	t: (text: LangKeysTypeof, options?: object) => string;
 	updateLocale: (lng: Lang) => void;
 }
 
