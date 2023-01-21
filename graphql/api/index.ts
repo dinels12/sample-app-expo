@@ -1304,47 +1304,39 @@ export type VehiclesEdge = {
   node?: Maybe<Vehicle>;
 };
 
-export type SpeciesFragmFragment = { __typename?: 'Species', name?: string | null, classification?: string | null, homeworld?: { __typename?: 'Planet', name?: string | null } | null };
+export type FilmFragmFragment = { __typename?: 'Film', id: string, title?: string | null, releaseDate?: string | null, director?: string | null };
 
-export type FilmFragmFragment = { __typename?: 'Film', id: string, title?: string | null, director?: string | null, releaseDate?: string | null };
+export type AllFilmsQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']>;
+}>;
 
-export type AllFilmsQueryVariables = Exact<{ [key: string]: never; }>;
 
+export type AllFilmsQuery = { __typename?: 'Root', allFilms?: { __typename?: 'FilmsConnection', totalCount?: number | null, edges?: Array<{ __typename?: 'FilmsEdge', cursor: string, node?: { __typename?: 'Film', id: string, title?: string | null, releaseDate?: string | null, director?: string | null } | null } | null> | null } | null };
 
-export type AllFilmsQuery = { __typename?: 'Root', allFilms?: { __typename?: 'FilmsConnection', films?: Array<{ __typename?: 'Film', id: string, title?: string | null, director?: string | null, releaseDate?: string | null, speciesConnection?: { __typename?: 'FilmSpeciesConnection', species?: Array<{ __typename?: 'Species', name?: string | null, classification?: string | null, homeworld?: { __typename?: 'Planet', name?: string | null } | null } | null> | null } | null } | null> | null } | null };
-
-export const SpeciesFragmFragmentDoc = gql`
-    fragment SpeciesFragm on Species {
-  name
-  classification
-  homeworld {
-    name
-  }
-}
-    `;
 export const FilmFragmFragmentDoc = gql`
     fragment FilmFragm on Film {
   id
   title
-  director
   releaseDate
+  director
 }
     `;
 export const AllFilmsDocument = gql`
-    query AllFilms {
-  allFilms {
-    films {
-      ...FilmFragm
-      speciesConnection {
-        species {
-          ...SpeciesFragm
-        }
+    query AllFilms($first: Int) {
+  allFilms(first: $first) {
+    edges {
+      cursor
+      node {
+        id
+        title
+        releaseDate
+        director
       }
     }
+    totalCount
   }
 }
-    ${FilmFragmFragmentDoc}
-${SpeciesFragmFragmentDoc}`;
+    `;
 
 /**
  * __useAllFilmsQuery__
@@ -1358,6 +1350,7 @@ ${SpeciesFragmFragmentDoc}`;
  * @example
  * const { data, loading, error } = useAllFilmsQuery({
  *   variables: {
+ *      first: // value for 'first'
  *   },
  * });
  */

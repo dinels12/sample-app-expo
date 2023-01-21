@@ -79,7 +79,8 @@ export function AuthProvider(props: any) {
 				},
 				user,
 				isAuth: !user
-			}}>
+			}}
+		>
 			{props.children}
 		</AuthContext.Provider>
 	);

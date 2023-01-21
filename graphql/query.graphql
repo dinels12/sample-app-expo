@@ -1,12 +1,14 @@
-query AllFilms {
-	allFilms {
-		films {
-			...FilmFragm
-			speciesConnection {
-				species {
-					...SpeciesFragm
-				}
+query AllFilms($first: Int) {
+	allFilms(first: $first) {
+		edges {
+			cursor
+			node {
+				id
+				title
+				releaseDate
+				director
 			}
 		}
+		totalCount
 	}
 }

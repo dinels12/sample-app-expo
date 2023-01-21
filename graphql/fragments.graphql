@@ -1,14 +1,6 @@
-fragment SpeciesFragm on Species {
-	name
-	classification
-	homeworld {
-		name
-	}
-}
-
 fragment FilmFragm on Film {
 	id
 	title
-	director
 	releaseDate
+	director
 }

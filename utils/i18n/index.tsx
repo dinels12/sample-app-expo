@@ -76,7 +76,8 @@ export const TranslationProvider = (props: any) => {
 				lang: i18n.locale,
 				t: translateOrFallback,
 				updateLocale
-			}}>
+			}}
+		>
 			{props.children}
 		</TranslationContext.Provider>
 	);
